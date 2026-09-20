@@ -35,8 +35,9 @@ export function getLatencyColorClass(latency: number): string {
  * Test URL latency
  */
 export async function testUrlLatency(url: string): Promise<PingStatus> {
-  if (import.meta.env.VITE_SNOWAPI_DEMO === 'true')
-    {return { latency: 180, testing: false, error: false }}
+  if (import.meta.env.VITE_SNOWAPI_DEMO === 'true') {
+    return { latency: 180, testing: false, error: false }
+  }
   try {
     const startTime = performance.now()
     await fetch(url, {

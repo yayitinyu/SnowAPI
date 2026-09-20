@@ -305,9 +305,11 @@ docs/                   上游文档与补充资料
 提交前建议至少运行：
 
 ```bash
+go vet ./...
 go test ./...
 
 cd web/default
+bun run copyright:check
 bun run format:check
 bun run lint
 bun run typecheck

@@ -20,8 +20,8 @@ import { useTranslation } from 'react-i18next'
 
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
-import { cn } from '@/lib/utils'
 import { appPath } from '@/lib/deployment-mode'
+import { cn } from '@/lib/utils'
 
 import type { SystemStatus } from '../types'
 

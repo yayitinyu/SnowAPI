@@ -86,7 +86,7 @@ export default defineConfig(({ envMode }) => {
         ),
         faviconUrl: isDemo
           ? `${basePath}snowapi-logo.png`
-          : '/snowapi-theme/unsnow-favicon.png?v=20260717-1',
+          : '/snowapi-theme/unsnow-favicon.png?v=20260920-1',
       },
     },
     server: {
@@ -102,14 +102,11 @@ export default defineConfig(({ envMode }) => {
           from: './src/features/snow-shield/REACT-BITS-LICENSE.txt',
           to: 'snow-shield-react-bits-license.txt',
         },
-        ...(isDemo
-          ? [
-              {
-                from: './src/features/subscriptions/animation/assets/snowapi-logo.png',
-                to: 'snowapi-logo.png',
-              },
-            ]
-          : []),
+        {
+          from: './src/features/subscriptions/animation/assets/snowapi-logo.png',
+          // Production references this stable path from the HTML template and shared logo component.
+          to: isDemo ? 'snowapi-logo.png' : 'snowapi-theme/unsnow-favicon.png',
+        },
       ],
       // Production optimizations
       minify: isProd,

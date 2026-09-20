@@ -18,8 +18,8 @@ For commercial licensing, please contact support@quantumnous.com
 */
 import { useTranslation } from 'react-i18next'
 
-import { cn } from '@/lib/utils'
 import { appPath } from '@/lib/deployment-mode'
+import { cn } from '@/lib/utils'
 
 import type { SystemStatus } from '../types'
 

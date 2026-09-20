@@ -23,7 +23,7 @@ import { cn } from '@/lib/utils'
 
 const fallbackLogo = IS_DEMO
   ? appPath('/snowapi-logo.png')
-  : '/snowapi-theme/unsnow-favicon.png?v=20260717-1'
+  : '/snowapi-theme/unsnow-favicon.png?v=20260920-1'
 
 type SnowApiLogoMarkProps = Omit<ComponentProps<'img'>, 'alt' | 'src'>
 

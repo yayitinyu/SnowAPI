@@ -16,7 +16,6 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 For commercial licensing, please contact support@quantumnous.com
 */
-
 import { useQuery } from '@tanstack/react-query'
 import { CalendarClock, Crown, Package } from 'lucide-react'
 import { useState } from 'react'

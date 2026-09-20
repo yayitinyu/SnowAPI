@@ -56,11 +56,7 @@ export function createMinimalModeSourceSchema(t: TFunction) {
               .min(1, t('Enter or select the upstream model name'))
               .max(255),
             icon_key: z.string().min(1, t('Select a model icon')),
-            endpoint_type: z.enum([
-              'openai',
-              'openai-response',
-              'anthropic',
-            ]),
+            endpoint_type: z.enum(['openai', 'openai-response', 'anthropic']),
             billing_mode: z.enum(['token', 'request']),
             input_price: z.string(),
             output_price: z.string(),

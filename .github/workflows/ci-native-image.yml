@@ -37,6 +37,8 @@ jobs:
       - name: Check default frontend
         working-directory: web/default
         run: |
+          bun run copyright:check
+          bun run format:check
           bun run typecheck
           bun run lint
           bun run build
@@ -54,8 +56,20 @@ jobs:
           go-version-file: go.mod
           cache: true
 
-      - name: Run backend tests
-        run: go test ./...
+      - name: Check Go formatting
+        shell: bash
+        run: |
+          unformatted="$(git ls-files -z -- '*.go' | xargs -0 -r gofmt -l)"
+          if [ -n "$unformatted" ]; then
+            echo "::error::The following Go files need gofmt:"
+            printf '%s\n' "$unformatted"
+            exit 1
+          fi
+
+      - name: Run backend checks
+        run: |
+          go vet ./...
+          go test ./...
 
   docker:
     name: Native Docker image (${{ matrix.arch }})

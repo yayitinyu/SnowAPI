@@ -16,7 +16,7 @@ func requirePaymentChannelOpen(c *gin.Context) bool {
 	}
 	c.JSON(http.StatusOK, gin.H{
 		"success": false,
-		"code": "payment_channel_closed",
+		"code":    "payment_channel_closed",
 		"message": "The payment channel is currently closed.",
 	})
 	return false

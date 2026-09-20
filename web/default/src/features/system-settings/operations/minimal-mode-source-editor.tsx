@@ -347,11 +347,7 @@ export function MinimalModeSourceEditor(props: MinimalModeSourceEditorProps) {
                   >
                     {discovering ? t('Loading...') : t('Fetch models')}
                   </Button>
-                  <Button
-                    type='button'
-                    variant='outline'
-                    onClick={appendModel}
-                  >
+                  <Button type='button' variant='outline' onClick={appendModel}>
                     {t('Add model')}
                   </Button>
                 </div>

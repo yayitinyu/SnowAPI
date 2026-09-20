@@ -41,7 +41,7 @@ export function SignIn() {
               status?.logo ||
               (IS_DEMO
                 ? appPath('/snowapi-logo.png')
-                : '/snowapi-theme/unsnow-favicon.png?v=20260717-1')
+                : '/snowapi-theme/unsnow-favicon.png?v=20260920-1')
             }
           />
           <h2 className='text-center text-2xl font-semibold tracking-tight sm:text-left'>

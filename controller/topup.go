@@ -30,7 +30,7 @@ func GetTopUpInfo(c *gin.Context) {
 	}
 
 	data := gin.H{
-		"payment_enabled":                 operation_setting.GetPaymentSetting().Enabled,
+		"payment_enabled":                  operation_setting.GetPaymentSetting().Enabled,
 		"enable_online_topup":              isEpayTopUpEnabled(),
 		"enable_redemption":                complianceConfirmed,
 		"payment_compliance_confirmed":     complianceConfirmed,
